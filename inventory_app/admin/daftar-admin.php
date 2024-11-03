@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login Admin</title>
+</head>
+
+<style>
+        /* CSS untuk menempatkan form di tengah layar */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <h1 class="text-center">Daftar</h1>
+        <form action="../proses/proses-daftar.php" method="POST" class="mt-5 bg-light p-3 rounded">
+            <div class="mb-3">
+                <label for="username" class="form-label text-dark">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label text-dark">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                        <label for="konfirmasi_password" class="form-label">Konfirmasi Password</label>
+                        <input type="password" class="form-control" name="konfirmasi_password" placeholder="Masukkan ulang password anda">
+            </div>
+            <button type="submit" class="btn btn-primary">Daftar</button>
+        </form>
+        <?php if (isset($error)) { echo "<p class='text-danger mt-3'>$error</p>"; } ?>
+    </div>
+</body>
+</html>
